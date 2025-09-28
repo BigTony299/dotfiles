@@ -1,94 +1,78 @@
-local on_attach = function(_client, bufnr)
-    vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
- 
-    local opts = { noremap=true, silent=true }
+vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
+vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
+vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, opts)
 
-	vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
-	vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
-	vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, opts)
+vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
+vim.keymap.set("n", "gr", require("telescope.builtin").lsp_references, opts)
+vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
 
-	vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-	vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
-	vim.keymap.set("n", "gr", require("telescope.builtin").lsp_references, opts)
-	vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-end
-
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
-
-require("lspconfig").gopls.setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
+vim.lsp.config("gopls", {
+	cmd = { "gopls" },
+	filetypes = { "go" },
+	root_markers = { "go.mod" },
 })
+vim.lsp.enable("gopls")
 
-require("lspconfig").rust_analyzer.setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
+vim.lsp.config("rust_analyzer", {
+	cmd = { "rust_analyzer" },
+	filetypes = { "rs" },
+	root_markers = { "cargo.toml" },
 })
+vim.lsp.enable("rust_analyzer")
 
-require("lspconfig").templ.setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
+vim.lsp.config("templ", {
+	cmd = { "templ", "lsp" },
+	filetypes = { "templ" },
+	root_markers = { "go.mod" },
 })
+vim.lsp.enable("templ")
 
-require("lspconfig").zls.setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
+vim.lsp.config("zls", {
+	cmd = { "zls" },
+	filetypes = { "zig" },
+	root_markers = {},
 })
+vim.lsp.enable("zls")
 
-require("lspconfig").sqls.setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
+vim.lsp.config("ts_ls", {
+	cmd = { "typescript-language-server", "--stdio" },
+	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact" },
+	root_markers = { "package.json" },
 })
+vim.lsp.enable("ts_ls")
 
-require("lspconfig").ts_ls.setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
-	init_options = {
-		plugins = {
-			{
-				name = "@vue/typescript-plugin",
-				location = vim.fn.stdpath("data")
-					.. "/mason/packages/vue-language-server/node_modules/@vue/language-server",
-				languages = { "vue" },
-			},
-		},
-	},
+vim.lsp.config("tailwindcss", {
+	cmd = { "tailwindcss-language-server" },
+	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact" },
+	root_markers = { "package.json" },
 })
+vim.lsp.enable("tailwindcss")
 
-require("lspconfig").volar.setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
+vim.lsp.config("phpactor", {
+	cmd = { "phpactor" },
+	filetypes = { "php" },
+	root_markers = {},
 })
+vim.lsp.enable("phpactor")
 
-require("lspconfig").tailwindcss.setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+vim.lsp.config("elixirls", {
+	cmd = { "elixir-ls" },
+	filetypes = { "ex", "exs" },
+	root_markers = {},
 })
+vim.lsp.enable("elixirls")
 
-require("lspconfig").phpactor.setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
+vim.lsp.config("lua_ls", {
+	cmd = { "lua-language-server" },
+	filetypes = { "lua" },
+	root_markers = {},
 })
+vim.lsp.enable("lua_ls")
 
-require("lspconfig").elixirls.setup({
-    cmd = { "elixir-ls" },
-	on_attach = on_attach,
-	capabilities = capabilities,
+vim.lsp.config("clangd", {
+	cmd = { "clangd" },
+	filetypes = { "c", "h", "cpp", "hpp" },
+	root_markers = { ".clangd" },
 })
-
-require("lspconfig").nil_ls.setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-})
-
-require("lspconfig").lua_ls.setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-})
-
-require("lspconfig").clangd.setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-})
+vim.lsp.enable("clangd")
