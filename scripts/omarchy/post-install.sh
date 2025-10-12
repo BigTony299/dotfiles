@@ -38,7 +38,7 @@ EOF
 
 omarchy-theme-install https://github.com/steve-lohmeyer/omarchy-mars-theme
 
-cat > ~/.bashrc << 'EOF'
+cat > ~/.config/hypr/bindings.conf << 'EOF'
 $terminal = uwsm app -- $TERMINAL
 $browser = omarchy-launch-browser
 
