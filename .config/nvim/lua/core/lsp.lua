@@ -1,11 +1,11 @@
-vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
-vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
-vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, opts)
+vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename)
+vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action)
+vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float)
 
-vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
-vim.keymap.set("n", "gr", require("telescope.builtin").lsp_references, opts)
-vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+vim.keymap.set("n", "gd", vim.lsp.buf.definition)
+vim.keymap.set("n", "gi", vim.lsp.buf.implementation)
+vim.keymap.set("n", "gr", require("telescope.builtin").lsp_references)
+vim.keymap.set("n", "K", vim.lsp.buf.hover)
 
 vim.lsp.config("gopls", {
 	cmd = { "gopls" },
@@ -15,9 +15,9 @@ vim.lsp.config("gopls", {
 vim.lsp.enable("gopls")
 
 vim.lsp.config("rust_analyzer", {
-	cmd = { "rust_analyzer" },
-	filetypes = { "rs" },
-	root_markers = { "cargo.toml" },
+	cmd = { "rust-analyzer" },
+	filetypes = { "rust" },
+	root_markers = { "Cargo.toml" },
 })
 vim.lsp.enable("rust_analyzer")
 
