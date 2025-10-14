@@ -5,7 +5,7 @@ yay -S --noconfirm direnv
 yay -S --noconfirm nix
 
 sudo mkdir /nix
-sudo chmod -R 755 /nix
+sudo chown -R $(whoami) /nix
 
 cd ~
 rm -rd .config/nvim
