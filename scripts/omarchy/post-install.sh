@@ -55,6 +55,7 @@ bindd = SUPER, G, Google, exec, omarchy-launch-webapp "https://google.com"
 bindd = SUPER, M, Spotify, exec, omarchy-launch-webapp "https://spotify.com"
 bindd = SUPER, N, Editor, exec, omarchy-launch-editor
 bindd = SUPER, O, Outlook, exec, omarchy-launch-webapp "https://outlook.com"
+bindd = SUPER, P, PrimeVideo, exec, omarchy-launch-webapp "https://primevideo.com"
 bindd = SUPER, S, Steam, exec, uwsm app -- Steam
 bindd = SUPER, T, Activity, exec, $terminal -e btop
 bindd = SUPER, X, X, exec, omarchy-launch-webapp "https://x.com/"
