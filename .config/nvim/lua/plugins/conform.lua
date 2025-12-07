@@ -27,6 +27,7 @@ return {
 				toml = { "taplo" },
 				python = { "black" },
 				c = { "clang-format", args = "--style=file --fallback-style=LLVM" },
+				cpp = { "clang-format", args = "--style=file --fallback-style=LLVM" },
 				nix = { "nixfmt" },
 			},
 		},
