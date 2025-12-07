@@ -3,3 +3,5 @@ gui:
   
 git:
   args: "-no-ff"
+
+promptToReturnFromSubprocess: false
