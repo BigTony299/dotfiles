@@ -3,8 +3,12 @@ vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action)
 vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float)
 
 vim.keymap.set("n", "gd", vim.lsp.buf.definition)
-vim.keymap.set("n", "gi", vim.lsp.buf.implementation)
-vim.keymap.set("n", "gr", require("telescope.builtin").lsp_references)
+vim.keymap.set("n", "gi", function()
+	require("telescope.builtin").lsp_implementations({ initial_mode = "normal" })
+end)
+vim.keymap.set("n", "gr", function()
+	require("telescope.builtin").lsp_references({ initial_mode = "normal" })
+end)
 vim.keymap.set("n", "K", vim.lsp.buf.hover)
 
 vim.lsp.config("gopls", {
