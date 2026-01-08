@@ -16,7 +16,7 @@ return {
 			vim.o.termguicolors = true
 			vim.cmd.colorscheme("plain")
 
-			local bg = "#222222"
+			local bg = "#1e1e2e"
 			local fg = "#cccccc"
 
 			vim.api.nvim_set_hl(0, "Normal", { fg = fg, bg = bg })
