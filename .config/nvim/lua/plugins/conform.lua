@@ -5,6 +5,10 @@ return {
 			formatters = {
 				clangfmt = {
 					command = "clang-format",
+					args = {
+						"--style=file",
+						"--fallback-style=LLVM",
+					},
 				},
 			},
 			formatters_by_ft = {
@@ -26,8 +30,8 @@ return {
 				elixir = { "mix" },
 				toml = { "taplo" },
 				python = { "black" },
-				c = { "clang-format", args = "--style=file --fallback-style=LLVM" },
-				cpp = { "clang-format", args = "--style=file --fallback-style=LLVM" },
+				c = { "clangfmt" },
+				cpp = { "clangfmt" },
 				nix = { "nixfmt" },
 			},
 		},
