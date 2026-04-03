@@ -10,6 +10,11 @@ return {
 						"--fallback-style=LLVM",
 					},
 				},
+				odinfmt = {
+					command = "odinfmt",
+					args = { "-stdin" },
+					stdin = true,
+				},
 			},
 			formatters_by_ft = {
 				lua = { "stylua" },
@@ -33,6 +38,7 @@ return {
 				c = { "clangfmt" },
 				cpp = { "clangfmt" },
 				nix = { "nixfmt" },
+				odin = { "odinfmt" },
 			},
 		},
 	},
