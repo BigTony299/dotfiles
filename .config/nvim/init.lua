@@ -404,29 +404,58 @@ require("feline").setup({
 
 -- TELESCOPE
 require("telescope").setup({
-  defaults = {
-    layout_strategy = "horizontal",
-    layout_config = {
-      width = 0.99,
-      height = 0.99,
-      prompt_position = "top",
-      preview_width = 0.7,
-      horizontal = { preview_cutoff = 0 },
-      vertical = { preview_cutoff = 0 },
-    },
-    sorting_strategy = "ascending",
-    winblend = 0,
-    mappings = {
-      n = {
-        ["<c-d>"] = require("telescope.actions").delete_buffer,
-      },
-      i = {
-        ["<C-h>"] = "which_key",
-        ["<c-d>"] = require("telescope.actions").delete_buffer,
-      },
-    },
-  },
+	defaults = {
+		layout_strategy = "horizontal",
+		layout_config = {
+			width = 0.99,
+			height = 0.99,
+			prompt_position = "top",
+			preview_width = 0.7,
+			horizontal = { preview_cutoff = 0 },
+			vertical = { preview_cutoff = 0 },
+		},
+		sorting_strategy = "ascending",
+		winblend = 0,
+		mappings = {
+			n = {
+				["<c-d>"] = require("telescope.actions").delete_buffer,
+			},
+			i = {
+				["<C-h>"] = "which_key",
+				["<c-d>"] = require("telescope.actions").delete_buffer,
+			},
+		},
+	},
 })
+
+-- NVIM-TREE
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+-- optionally enable 24-bit colour
+vim.opt.termguicolors = true
+
+-- empty setup using defaults
+require("nvim-tree").setup()
+
+-- OR setup with a config
+
+---@type nvim_tree.config
+local config = {
+	sort = {
+		sorter = "case_sensitive",
+	},
+	view = {
+		width = 30,
+	},
+	renderer = {
+		group_empty = true,
+	},
+	filters = {
+		dotfiles = true,
+	},
+}
+require("nvim-tree").setup(config)
 
 require("personal")
 require("keymaps")

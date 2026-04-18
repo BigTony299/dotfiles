@@ -11,7 +11,8 @@ vim.opt.expandtab = true
 
 vim.keymap.set("n", "<leader>h", ":nohlsearch<CR>")
 vim.keymap.set("n", "<leader>w", "<C-w>w")
-vim.keymap.set("n", "<leader>t", ":Sex<CR>")
+vim.keymap.set("n", "<leader>t", ":NvimTreeToggle<CR>")
+vim.keymap.set("n", "<leader>n", ":NvimTreeFindFile<CR>")
 vim.keymap.set("n", "<leader>cf", require("conform").format, {})
 vim.keymap.set("n", "<leader>j", require("hop").hint_words, {})
 
