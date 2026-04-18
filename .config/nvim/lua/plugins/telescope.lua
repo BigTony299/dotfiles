@@ -1,7 +1,7 @@
 return {
 	{
 		"nvim-telescope/telescope.nvim",
-		tag = "v0.2.0",
+		tag = "v0.2.2",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 		},
@@ -26,7 +26,7 @@ return {
 						width = 0.99,
 						height = 0.99,
 						prompt_position = "top",
-                        preview_width = 0.7,
+						preview_width = 0.7,
 						horizontal = {
 							preview_cutoff = 0,
 						},

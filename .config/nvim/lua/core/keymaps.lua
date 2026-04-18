@@ -13,42 +13,11 @@ vim.opt.expandtab = true
 vim.keymap.set("n", "<leader>h", ":nohlsearch<CR>")
 vim.keymap.set("n", "<leader>w", "<C-w>w")
 
--- snippets
--- local cmp = require("cmp")
---
--- require("luasnip.loaders.from_vscode").lazy_load()
---
--- cmp.setup({
--- 	mapping = cmp.mapping.preset.insert({
--- 		["<C-b>"] = cmp.mapping.scroll_docs(-4),
--- 		["<C-f>"] = cmp.mapping.scroll_docs(4),
--- 		["<C-o>"] = cmp.mapping.complete(),
--- 		["<C-e>"] = cmp.mapping.abort(),
--- 		["<CR>"] = cmp.mapping.confirm({ select = true }),
--- 	}),
---
--- 	snippet = {
--- 		expand = function(args)
--- 			require("luasnip").lsp_expand(args.body)
--- 		end,
--- 	},
--- 	sources = cmp.config.sources({
--- 		{ name = "nvim_lsp" },
--- 		{ name = "luasnip" },
--- 	}, {
--- 		{ name = "buffer" },
--- 	}),
--- })
-
 -- format
-local conform = require("conform")
-
-vim.keymap.set("n", "<leader>cf", conform.format, {})
+vim.keymap.set("n", "<leader>cf", require("conform").format, {})
 
 -- jump to word
-local hop = require("hop")
-local directions = require("hop.hint").HintDirection
-vim.keymap.set("n", "<leader>j", hop.hint_words, {})
+vim.keymap.set("n", "<leader>j", require("hop").hint_words, {})
 
 -- nvim-tree
 vim.g.loaded_netwr = 1
