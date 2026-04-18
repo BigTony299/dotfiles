@@ -1,4 +1,5 @@
-require("config.lazy")
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
 
 -- TODO(ag): no longer necessary after removing lazy (overrides path + blocks auto detection of plugins)
 vim.opt.packpath:prepend(vim.fn.stdpath("config"))
@@ -416,6 +417,35 @@ require("feline").setup({
 	},
 	theme = theme,
 	vi_mode_colors = mode_theme,
+})
+
+-- TELESCOPE
+vim.cmd("packadd plenary.nvim")
+vim.cmd("packadd telescope.nvim")
+
+require("telescope").setup({
+  defaults = {
+    layout_strategy = "horizontal",
+    layout_config = {
+      width = 0.99,
+      height = 0.99,
+      prompt_position = "top",
+      preview_width = 0.7,
+      horizontal = { preview_cutoff = 0 },
+      vertical = { preview_cutoff = 0 },
+    },
+    sorting_strategy = "ascending",
+    winblend = 0,
+    mappings = {
+      n = {
+        ["<c-d>"] = require("telescope.actions").delete_buffer,
+      },
+      i = {
+        ["<C-h>"] = "which_key",
+        ["<c-d>"] = require("telescope.actions").delete_buffer,
+      },
+    },
+  },
 })
 
 require("core.personal")
