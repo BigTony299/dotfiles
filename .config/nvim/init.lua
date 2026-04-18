@@ -1,14 +1,7 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
--- TODO(ag): no longer necessary after removing lazy (overrides path + blocks auto detection of plugins)
-vim.opt.packpath:prepend(vim.fn.stdpath("config"))
-
--- AUTO-SAVE
-vim.cmd("packadd auto-save.nvim")
-
 -- COMMENT
-vim.cmd("packadd Comment.nvim")
 require("Comment").setup({
 	padding = true,
 	sticky = true,
@@ -27,13 +20,11 @@ require("Comment").setup({
 })
 
 -- HOP
-vim.cmd("packadd hop.nvim")
 require("hop").setup({
 	keys = "etovxqpdygfblzhckisuran",
 })
 
 -- COLOR
-vim.cmd("packadd vim-colors-plain")
 vim.o.background = "dark"
 vim.o.termguicolors = true
 vim.cmd.colorscheme("plain")
@@ -45,11 +36,7 @@ vim.api.nvim_set_hl(0, "Normal", { fg = fg, bg = bg })
 vim.api.nvim_set_hl(0, "NormalNC", { bg = bg })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = bg })
 
--- TREESITTER
-vim.cmd("packadd nvim-treesitter")
-
 -- CONFORM
-vim.cmd("packadd conform.nvim")
 require("conform").setup({
 	formatters = {
 		clangfmt = {
@@ -92,13 +79,9 @@ require("conform").setup({
 })
 
 -- Markdown
-vim.cmd("packadd mini.nvim")
-vim.cmd("packadd render-markdown.nvim")
 require("render-markdown").setup({})
 
 -- Feline
-vim.cmd("packadd nvim-web-devicons")
-vim.cmd("packadd feline.nvim")
 vim.o.termguicolors = true
 
 -- Customizations {{{
@@ -420,9 +403,6 @@ require("feline").setup({
 })
 
 -- TELESCOPE
-vim.cmd("packadd plenary.nvim")
-vim.cmd("packadd telescope.nvim")
-
 require("telescope").setup({
   defaults = {
     layout_strategy = "horizontal",
@@ -448,5 +428,5 @@ require("telescope").setup({
   },
 })
 
-require("core.personal")
-require("core.keymaps")
+require("personal")
+require("keymaps")
