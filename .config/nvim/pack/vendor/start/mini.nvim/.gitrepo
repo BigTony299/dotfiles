@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/echasnovski/mini.nvim.git
+	branch = main
+	commit = 418ef4930ddabe80f449c6f1323f8b6abb172d1c
+	parent = 714a0e27bee6ffa6e5eb10588273589cb69f4fe6
+	method = merge
+	cmdver = 0.4.9
