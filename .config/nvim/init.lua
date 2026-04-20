@@ -457,5 +457,7 @@ local config = {
 }
 require("nvim-tree").setup(config)
 
+require("autoclose").setup()
+
 require("personal")
 require("keymaps")
