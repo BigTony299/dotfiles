@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/m4xshen/autoclose.nvim.git
+	branch = main
+	commit = bafd0368716216fa6a7bb2a43ecd889b44efdb46
+	parent = 0d427114f9e72793b62ad283ef8b8e5614b71d0e
+	method = merge
+	cmdver = 0.4.9
