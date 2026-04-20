@@ -1,14 +1,3 @@
-vim.opt.backspace = "2"
-vim.opt.showcmd = true
-vim.opt.laststatus = 2
-vim.opt.autowrite = true
-vim.opt.autoread = true
-
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.shiftround = true
-vim.opt.expandtab = true
-
 vim.keymap.set("n", "<leader>h", ":nohlsearch<CR>")
 vim.keymap.set("n", "<leader>w", "<C-w>w")
 vim.keymap.set("n", "<leader>t", ":NvimTreeToggle<CR>")
