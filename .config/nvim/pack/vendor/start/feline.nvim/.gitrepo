@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/famiu/feline.nvim.git
+	branch = master
+	commit = 3587f57480b88e8009df7b36dc84e9c7ff8f2c49
+	parent = bbc11953661627b4128866fd1ba5ea77a48474f9
+	method = merge
+	cmdver = 0.4.9
