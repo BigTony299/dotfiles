@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/nvim-tree/nvim-web-devicons.git
+	branch = master
+	commit = c72328a5494b4502947a022fe69c0c47e53b6aa6
+	parent = 681d3d39d44f9444cfdd5389bea6bc995c24123b
+	method = merge
+	cmdver = 0.4.9
