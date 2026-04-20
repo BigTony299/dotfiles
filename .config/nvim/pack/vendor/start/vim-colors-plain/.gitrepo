@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/andreypopp/vim-colors-plain.git
+	branch = master
+	commit = 908ed31ad398c18b47a3f4f71c97313754484ff8
+	parent = 627708b4cfff740304e3b962e9f7e453b7e71e9d
+	method = merge
+	cmdver = 0.4.9
