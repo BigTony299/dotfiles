@@ -15,3 +15,11 @@ vim.keymap.set("n", "<leader>s", "viw\"9y:lua require('telescope.builtin').live_
 
 vim.keymap.set({ "n", "v" }, "<leader>y", '"+y')
 vim.keymap.set({ "n", "v" }, "<leader>p", '"+p')
+
+vim.keymap.set("n", "<leader>r", function()
+  vim.cmd("botright vsplit")
+  vim.cmd("terminal just")
+  vim.cmd("startinsert")
+end, {
+  desc = "Run just in right vertical terminal split",
+})
